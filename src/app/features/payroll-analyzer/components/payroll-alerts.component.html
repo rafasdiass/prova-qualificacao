@@ -1,0 +1,23 @@
+<div class="payroll-alerts">
+  <h3>Alertas de folha processada</h3>
+
+  <div *ngIf="!hasAlerts" class="no-alerts">
+    <i class="bi bi-check-circle"></i>
+    Nenhum alerta encontrado! Tudo certo na folha analisada.
+  </div>
+
+  <ul *ngIf="hasAlerts" class="alerts-list">
+    <li *ngFor="let alert of alerts" [ngClass]="alert.type">
+      <span class="icon">
+        <i *ngIf="alert.type === 'RENDIMENTO_ATIPICO'" class="bi bi-exclamation-circle text-warning"></i>
+        <i *ngIf="alert.type === 'DESCONTO_VARIACAO'" class="bi bi-arrow-down-up text-danger"></i>
+      </span>
+      <span class="message">
+        {{ alert.message }}
+        <small class="details">
+          ({{ alert.record.nome }} - {{ alert.record.codigo_rubrica }})
+        </small>
+      </span>
+    </li>
+  </ul>
+</div>

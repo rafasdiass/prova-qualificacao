@@ -1,0 +1,35 @@
+.xml-translator-page {
+  max-width: 680px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #f8f9fa;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #a2a2da22, 0 2px 8px #e1e1e122;
+
+  h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #6c63ff;
+    margin-bottom: 2.1rem;
+    font-weight: 700;
+  }
+  .edit-section {
+    margin-top: 2rem;
+  }
+  .reset-btn {
+    margin-top: 1.2rem;
+    background: #f6f6ff;
+    border: 1px solid #a2a2da;
+    border-radius: 7px;
+    color: #4e43c6;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    &:hover {
+      background: #e7e7fc;
+      border-color: #6c63ff;
+    }
+  }
+}

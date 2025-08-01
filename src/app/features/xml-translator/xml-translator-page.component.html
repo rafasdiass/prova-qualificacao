@@ -1,0 +1,18 @@
+<div class="xml-translator-page">
+  <h2>Tradutor de XML de Localização</h2>
+
+  <app-xml-upload (xmlLoaded)="onXmlLoaded($event)"></app-xml-upload>
+
+  <section *ngIf="localizationFile" class="edit-section">
+    <app-translation-table
+      [localizationFile]="localizationFile"
+      (localizationFileChanged)="onLocalizationFileChanged($event)">
+    </app-translation-table>
+
+    <app-export-xml [localizationFile]="localizationFile"></app-export-xml>
+
+    <button type="button" class="reset-btn" (click)="onReset()">
+      Reiniciar tradução
+    </button>
+  </section>
+</div>

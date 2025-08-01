@@ -1,0 +1,44 @@
+.main-header {
+  background: #6c63ff;
+  color: #fff;
+  padding: 1.1rem 0;
+  box-shadow: 0 2px 12px #372e6c23;
+  .navbar {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      i {
+        font-size: 1.5rem;
+      }
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0.4rem 1.1rem;
+        border-radius: 6px;
+        transition: background 0.15s;
+        &.active,
+        &:hover {
+          background: #4e43c6;
+        }
+      }
+    }
+  }
+}
+.main-content {
+  min-height: 80vh;
+  padding: 2rem 0.5rem;
+}

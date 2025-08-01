@@ -1,0 +1,21 @@
+<div class="xml-upload">
+  <label for="xml-file-upload" class="upload-label">
+    Selecione um arquivo de localização (.xml)
+    <input
+      id="xml-file-upload"
+      type="file"
+      accept=".xml"
+      (change)="onFileSelected($event)"
+      class="upload-input"
+    />
+  </label>
+
+  <div *ngIf="uploadError" class="error-message">
+    <i class="bi bi-x-circle"></i>
+    {{ uploadError }}
+  </div>
+  <div *ngIf="uploadSuccess" class="success-message">
+    <i class="bi bi-check-circle"></i>
+    Arquivo XML importado com sucesso!
+  </div>
+</div>

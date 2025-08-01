@@ -1,0 +1,10 @@
+<div class="payroll-analyzer-page">
+  <h2>Análise de Folha Salarial</h2>
+
+  <app-dataset-upload (datasetLoaded)="onDatasetLoaded($event)"></app-dataset-upload>
+
+  <section *ngIf="lastPayrollData.length > 0" class="results-section">
+    <app-payroll-alerts [alerts]="payrollAlerts"></app-payroll-alerts>
+    <button type="button" class="reset-btn" (click)="onReset()">Reiniciar análise</button>
+  </section>
+</div>

@@ -1,0 +1,45 @@
+<div class="translation-table" *ngIf="localizationFile">
+  <h3>Tradução das Strings</h3>
+  <div *ngFor="let group of localizationFile.groups; let gIndex = index">
+    <ng-container *ngTemplateOutlet="groupTemplate; context: renderGroup(group, [gIndex])"></ng-container>
+  </div>
+</div>
+
+<ng-template #groupTemplate let-group="group" let-groupPath="groupPath">
+  <div class="group-block">
+    <div class="group-header">
+      <i class="bi bi-folder"></i>
+      <strong>{{ group.name }}</strong>
+      <span *ngIf="group.tags" class="group-tags">({{ group.tags }})</span>
+    </div>
+    <table class="strings-table" *ngIf="group.strings.length">
+      <thead>
+      <tr>
+        <th>Key</th>
+        <th>Texto Original</th>
+        <th>Tradução/Editar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let stringItem of group.strings; let sIdx = index">
+        <td>{{ stringItem.key }}</td>
+        <td>{{ stringItem.value }}</td>
+        <td>
+          <input
+            type="text"
+            [value]="stringItem.value"
+            (input)="onStringInput($event, groupPath, sIdx)"
+            placeholder="Tradução em português"
+          />
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <!-- Subgrupos recursivos -->
+    <div *ngIf="group.groups?.length">
+      <div *ngFor="let sub of group.groups; let subIdx = index">
+        <ng-container *ngTemplateOutlet="groupTemplate; context: renderGroup(sub, groupPath.concat([subIdx]))"></ng-container>
+      </div>
+    </div>
+  </div>
+</ng-template>

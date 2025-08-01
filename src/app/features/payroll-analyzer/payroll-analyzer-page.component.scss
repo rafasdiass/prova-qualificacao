@@ -1,0 +1,49 @@
+.payroll-alerts {
+  margin-top: 1.5rem;
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .no-alerts {
+    color: #27ae60;
+    background: #f0fff0;
+    border-radius: 6px;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .alerts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      background: #fff6f0;
+      border-left: 4px solid #f39c12;
+      border-radius: 6px;
+      padding: 0.75rem 1.2rem;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      &.DESCONTO_VARIACAO {
+        border-color: #e74c3c;
+      }
+      .icon {
+        font-size: 1.3rem;
+        margin-right: 0.4rem;
+      }
+      .message {
+        flex: 1;
+        font-size: 1rem;
+        .details {
+          color: #666;
+          font-size: 0.88em;
+          margin-left: 0.6rem;
+        }
+      }
+    }
+  }
+}

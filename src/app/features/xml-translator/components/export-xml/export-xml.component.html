@@ -1,0 +1,20 @@
+<div class="export-xml">
+  <button
+    type="button"
+    class="export-btn"
+    [disabled]="!localizationFile"
+    (click)="onExportXml()"
+  >
+    <i class="bi bi-file-earmark-arrow-down"></i>
+    Exportar XML traduzido
+  </button>
+
+  <div *ngIf="exportError" class="error-message">
+    <i class="bi bi-x-circle"></i>
+    {{ exportError }}
+  </div>
+  <div *ngIf="exportSuccess" class="success-message">
+    <i class="bi bi-check-circle"></i>
+    Arquivo XML exportado com sucesso!
+  </div>
+</div>
